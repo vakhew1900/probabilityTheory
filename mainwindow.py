@@ -86,7 +86,6 @@ class Window(QtWidgets.QMainWindow):
         self.ui.answerLineEdit.setText(str(ans))
         
             
- 
 app = QtWidgets.QApplication([])
 application = Window()
 application.show()
