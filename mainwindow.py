@@ -1,21 +1,30 @@
 from msilib.schema import ComboBox
 from PyQt5 import QtWidgets
 from design import Ui_MainWindow  
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QPixmap, QIcon
 import sys
 
   
-def A(x, y):
-    return 1
+def factorial(n):
+    num = 1
+    for i in range(1, n + 1):
+        num *= i
+    return num
 
-def P(x):
-    return 2
+def ARepeat(n, k):
+    return (n ** k)
 
-def C(x,y):
-    return 3
+def P(n):
+    return factorial(n)
 
-def therver(x, y):
-    return 4
+def C(n, k):
+    return factorial(n) // factorial(k) // factorial(n - k)
+
+def CRepeat(n, k):
+    return C(n + k - 1, k)
+
+def therver(n, m):
+    return C(n, m) / CRepeat(n, m)
 
 class Window(QtWidgets.QMainWindow):
     def __init__(self):
@@ -48,7 +57,7 @@ class Window(QtWidgets.QMainWindow):
         elif(index == 2):
             mip = QPixmap('./image/moving.jpg')
         elif(index == 3):
-            mip = QPixmap('./image/replace.jpg')
+            mip = QPixmap('./image/replace.png')
         self.ui.imgLabel.setPixmap(mip)
         
         
@@ -81,13 +90,14 @@ class Window(QtWidgets.QMainWindow):
         elif (index == 2):
             ans = P(n)
         else:
-            ans = A(n, m)
+            ans = ARepeat(n, m)
 
         self.ui.answerLineEdit.setText(str(ans))
         
             
 app = QtWidgets.QApplication([])
 application = Window()
+application.setWindowIcon(QIcon("./image/icon.jpg"))
 application.show()
  
 sys.exit(app.exec())
