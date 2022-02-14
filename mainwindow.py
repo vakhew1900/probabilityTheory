@@ -4,7 +4,12 @@ from design import Ui_MainWindow
 from PyQt5.QtGui import QPixmap, QIcon
 import sys
 
-  
+def proiz(l, r):
+    num = 1
+    for i in range(l,r+1):
+        num*=i
+    return  num
+
 def factorial(n):
     num = 1
     for i in range(1, n + 1):
@@ -15,10 +20,17 @@ def ARepeat(n, k):
     return (n ** k)
 
 def P(n):
-    return factorial(n)
+    return proiz(1, n)
+
 
 def C(n, k):
-    return factorial(n) // factorial(k) // factorial(n - k)
+    if(k > n - k):
+        return proiz(k + 1, n) // proiz(1, n - k + 1)
+    else:
+        return  proiz(n - k + 1, n) // proiz(1, k)
+
+def therver2(n, m):
+    return 11
 
 def CRepeat(n, k):
     return C(n + k - 1, k)
@@ -58,6 +70,7 @@ class Window(QtWidgets.QMainWindow):
             mip = QPixmap('./image/moving.jpg')
         elif(index == 3):
             mip = QPixmap('./image/replace.png')
+
         self.ui.imgLabel.setPixmap(mip)
         
         
@@ -89,8 +102,10 @@ class Window(QtWidgets.QMainWindow):
             ans = therver(n, m)
         elif (index == 2):
             ans = P(n)
-        else:
+        elif (index == 3):
             ans = ARepeat(n, m)
+        elif (index == 4):
+            ans = therver2(n, m)
 
         self.ui.answerLineEdit.setText(str(ans))
         

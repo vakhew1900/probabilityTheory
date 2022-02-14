@@ -98,9 +98,10 @@ class Ui_MainWindow(QMainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Lomakin, Oleinikov, Chupinin"))
         self.comboBox.setItemText(0, _translate("MainWindow", "сочетание"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "теория вероятности"))
+        self.comboBox.setItemText(1, _translate("MainWindow", "задача № 3"))
         self.comboBox.setItemText(2, _translate("MainWindow", "перемещение"))
         self.comboBox.setItemText(3, _translate("MainWindow", "перестановка с повторениями"))
+        self.comboBox.setItemText(4, _translate("MainWindow", "задача № 5"))
         self.nLabel.setText(_translate("MainWindow", "n:"))
         self.mLabel.setText(_translate("MainWindow", "m:"))
         self.pushButton.setText(_translate("MainWindow", "="))
