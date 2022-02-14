@@ -31,6 +31,7 @@ class Ui_MainWindow(QMainWindow):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.gridLayout_3.addWidget(self.comboBox, 0, 0, 1, 1)
         spacerItem = QtWidgets.QSpacerItem(554, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_3.addItem(spacerItem, 0, 1, 1, 1)
